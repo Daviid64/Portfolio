@@ -12,7 +12,7 @@ url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 body{
     font-family: 'Press Start 2P';
     font-size: 15px;
-    background: linear-gradient(135deg, #0a0a1b,#2c3e50);
+    background: linear-gradient(135deg, #0d0dc1,#8709c6);
     color: #fff;
     width: 100%;
     height: 100%;
@@ -89,22 +89,376 @@ img{
     width: 98.5%;
     height: 400px;
 }
+
+.box{
+    display: flex;
+    justify-content: center;
+}
+
+.carre1{
+    width: 300px;
+    height: 300px;
+    border: solid black 1.5px;
+    margin-right: 10px;
+    background-color: lime;
+    border-radius: 25px;
+}
+
+.carre2{
+    width: 300px;
+    height: 300px;
+    border: solid black 1.5px;
+    margin-right: 10px;
+    background-color: lime;
+    border-radius: 25px;
+}
+
+.carre3{
+    width: 300px;
+    height: 300px;
+    border: solid black 1.5px;
+    margin-right: 10px;
+    background-color: lime;
+    border-radius: 25px;
+}
+
+.carre4{
+    width: 300px;
+    height: 300px;
+    border: solid black 1.5px;
+    background-color: lime;
+    border-radius: 25px;
+}
+
 #p1{
     color:yellowgreen;
     font-size: 17px;
 }
 p{
     color: blue;
+    text-align: center;
+    font-size: 22px;
+}
+
+#p2{
+    color: yellow;
+    text-align: center;
 }
 
 #p3{
     color: red;
+    text-align: center;
 }
 
-.paragraphes{
-
+#p5{
+    color: aqua;
+    text-align: center;
 }
-footer{
-    background: linear-gradient(135deg, #0a0a1b,#2c3e50);
+
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #00b7ff;
+  text-shadow: 0 0 5px #011616;
+}
+
+/* Style de la barre <progress> */
+progress {
+  width: 100%;
+  height: 25px;
+  background-color: #111;
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 5px #00ffff88;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Barre de progression (valeur) */
+progress::-webkit-progress-value {
+  background: linear-gradient(90deg, #00ffff, #0066ff);
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  border-radius: 5px 0 0 5px;
+}
+
+/* Fond de la barre */
+progress::-webkit-progress-bar {
+  background-color: #111;
+}
+
+/* Firefox fallback */
+progress::-moz-progress-bar {
+  background: linear-gradient(90deg, #00ffff, #0066ff);
+  box-shadow: 0 0 10px #b700ff, 0 0 10px #b700ff;
+}
+
+/* Animation optionnelle */
+@keyframes pulse {
+  0% { box-shadow: 0 0 5px #b700ff; }
+  50% { box-shadow: 0 0 15px #b700ff; }
+  100% { box-shadow: 0 0 5px #b700ff; }
+}
+
+progress::-webkit-progress-value {
+  animation: pulse 2s infinite;
+}
+
+.box2{
+    display: flex;
+    justify-content: center;
+}
+
+.Projet1 {
+    width: 500px;
+    min-height: 500px;
+    border: #0a0a1b solid 1.5px;
+    background: linear-gradient(90deg, #08e5e5, rgb(0, 255, 0));
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+}
+#Cybersécurité {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #0000ff;
+    text-align: center;
+}
+#cyber {
+    font-size: 16px;
+    color: white;
+    white-space: normal;
+    text-indent: 0;
+    line-height: 1.5;
+}
+
+.Projet1_1  {
+    width:500px;
+    min-height: 500px;
+    border: #0a0a1b solid 1.5px;
+    background: linear-gradient( #00ffff,rgb(0, 8, 255));
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#Gaming{   
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: orangered;
+    text-align: center;
+    white-space: normal;
+    text-indent: 0;
+}
+
+#gaming{
+    font-size: 16px;
+    color: white;
+    white-space: normal;
+    text-indent: 0;
+    line-height: 1.5;
+}
+
+.box_Passions{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.Passion1 {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 1px solid #000000;
+    margin: 10px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#_passion1 {
+    font-size: 16px;
+    color: white;
+    margin: 0;
+}
+
+.Passion2{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 1px solid #000000;
+    margin: 10px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#_passion2 {
+    font-size: 16px;
+    color: white;
+    margin: 0;
+}
+
+.Passion3{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 1px solid #000000;
+    margin: 10px;
+    background: linear-gradient( 180deg, aqua,lime) ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#_passion3 {
+    font-size: 16px;
+    color: white;
+    margin: 0;
+}
+
+.Passion4{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 1px solid #000000;
+    margin: 10px;
+    background-color: lime;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#_passion4 {
+    font-size: 16px;
+    color: white;
+    margin: 0;
+}
+
+.Passion5{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 1px solid #000000;
+    margin: 10px;
+    background-color: lime;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#_passion5 {
+    font-size: 16px;
+    color: white;
+    margin: 0;
+}
+
+footer {
+    position: relative; /* nécessaire pour que le positionnement absolu de #pfooter fonctionne */
+    width: 95%;
+    height: 13em;
+    padding: 10px;
+    background: linear-gradient(135deg, #0a0a1b, #2c3e50);
     color: #fff;
+    margin-bottom: 0px;
+    box-sizing: border-box;
 }
+
+#pfooter {
+    position: absolute;
+    bottom: 10px;   /* 10px du bas */
+    left: 10px;     /* 10px du bord gauche */
+    font-size: 12px;
+    color: #ccc;
+    text-align: left;
+}
+
+#Footer{
+   color: lime;
+}
+
+
+                                            /* ================= RESPONSIVE DESIGN ================= */
+
+/* ================= MOBILE-FIRST ================= */
+
+header, footer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 10px;
+    background: linear-gradient(135deg, #0a0a1b, #2c3e50);
+    color: #fff;
+    text-align: center;
+  }
+  
+  /* Titre principal dans le header et footer */
+  #neon-title,
+  #Footer {
+    font-family: 'Press Start 2P';
+    font-size: 22px;
+    word-break: break-word;
+    line-height: 1.3;
+    margin: 0;
+    color: white;
+    text-shadow:
+      0 0 5px #00f0ff,
+      0 0 10px #00f0ff,
+      0 0 20px #33ffff,
+      0 0 40px #33ffff,
+      0 0 80px #00ccff,
+      0 0 90px #00ccff,
+      0 0 100px #00ccff;
+    animation: neonPulse 1.5s infinite alternate;
+  }
+  
+  /* ========== TABLETTES (≥ 768px) ========== */
+  @media screen and (min-width: 768px) {
+    #neon-title,
+    #Footer {
+      font-size: 32px;
+    }
+  
+    header, footer {
+      padding: 30px 40px;
+    }
+  }
+  
+  /* ========== ORDINATEURS (≥ 1024px) ========== */
+  @media screen and (min-width: 1024px) {
+    #neon-title,
+    #Footer {
+      font-size: 50px;
+    }
+  
+    header, footer {
+      padding: 40px 60px;
+    }
+  }
+  
+  /* Animation existante (neonPulse) */
+  @keyframes neonPulse {
+    0% {
+      text-shadow:
+        0 0 2px #00f0ff,
+        0 0 5px #00f0ff,
+        0 0 10px #33ffff,
+        0 0 20px #00ccff,
+        0 0 40px #00ccff;
+    }
+    100% {
+      text-shadow:
+        0 0 10px #00f0ff,
+        0 0 20px #00f0ff,
+        0 0 30px #33ffff,
+        0 0 60px #00ccff,
+        0 0 80px #00ccff,
+        0 0 100px #00ccff;
+    }
+  }
+  
