@@ -1,4 +1,4 @@
-const monText = `Bienvenue sur mon Portefolio voyageur =) !! Je me présente ,je suis Vaynix et je suis pasionné d'informatique !!
+const monText = `Bienvenue sur mon Portefolio voyageur =) !! Je me présente ,je suis David et je suis pasionné d'informatique !!
 Mais ce qui me passione en particulier c'est le développement Blockchain et la Cybersécurité lié au développement informatique.
 Ma principale qualité est la persévérance  `
 const lettresDiv = document.getElementById('p1');  // On s'assure d'avoir l'élément où afficher le texte
@@ -12,4 +12,8 @@ let index = 0;   //Index pour suivre la position actuelle dans le texte
          index++;  // Passe à la lettre suivante
      }
  }, 15);
+
+
+
+ 
 
