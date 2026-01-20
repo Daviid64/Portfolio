@@ -3,92 +3,211 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio Cypherpunk</title>
+<title>Portfolio Cyberpunk</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  /* Reset & Global */
-  * { margin:0; padding:0; box-sizing:border-box; font-family: 'Orbitron', sans-serif; }
-  body { background:#0f0f0f; color:#00ffea; overflow-x:hidden; }
-  a { color:#00ffea; text-decoration:none; transition:0.3s; }
-  a:hover { color:#0099ff; } /* Hover bleu néon foncé */
+  /* ----------------------------- */
+/*      RESET & STYLES GLOBALS   */
+/* ----------------------------- */
 
-  /* Navbar */
-  nav {
-    position: fixed; top:0; width:100%; padding:20px; background:rgba(0,0,0,0.7); display:flex; justify-content:flex-end; gap:30px; z-index:10;
-  }
-  nav a { font-weight:bold; }
+/* Supprime marges/paddings, active box-sizing et applique la police globale */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
 
-  /* Sections */
-  section { min-height:100vh; display:flex; align-items:center; justify-content:center; flex-direction:column; text-align:center; padding:50px; }
+/* Fond noir futuriste, texte bleu néon, pas de scroll horizontal */
+body {
+  background: #0f0f0f;
+  color: #00ffea;
+  overflow-x: hidden;
+}
 
-  /* Hero */
-  #hero { position:relative; overflow:hidden; }
-  canvas { position:absolute; top:0; left:0; width:100%; height:100%; z-index:-1; }
+/* Liens en bleu néon avec transition pour hover */
+a {
+  color: #00ffea;
+  text-decoration: none;
+  transition: 0.3s;
+}
+a:hover {
+  color: #0099ff; /* bleu plus foncé quand on passe la souris */
+}
 
-  /* Titre glitch holographique */
-  .holo-title {
-    font-size: 3em;
-    font-weight: bold;
-    position: relative;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #00ffea; /* Cyan néon principal */
-    margin-bottom: 20px;
-  }
+/* ----------------------------- */
+/*             NAVBAR            */
+/* ----------------------------- */
 
-  .holo-title::before,
-  .holo-title::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    color: #00ffea;
-    overflow: hidden;
-    opacity: 0.8;
-  }
+nav {
+  position: fixed;              /* reste collée en haut même en scrollant */
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  background: rgba(0,0,0,0.7); /* noir transparent pour effet futuriste */
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;                   /* espace entre les liens */
+  z-index: 10;                 /* reste au-dessus des autres éléments */
+}
 
-  .holo-title::before {
-    left: 1px;
-    text-shadow: -1px 0 #00ffea;
-    clip: rect(0, 900px, 15px, 0);
-    animation: glitchTop 2s infinite linear;
-  }
+nav a {
+  font-weight: bold;
+}
 
-  .holo-title::after {
-    left: -1px;
-    text-shadow: 1px 0 #00ffea;
-    clip: rect(10px, 900px, 25px, 0);
-    animation: glitchBottom 2.5s infinite linear;
-  }
+/* ----------------------------- */
+/*           SECTIONS            */
+/* ----------------------------- */
 
-  @keyframes glitchTop {
-    0% { transform: translate(0,0); }
-    20% { transform: translate(-1px,1px); }
-    40% { transform: translate(1px,-1px); }
-    60% { transform: translate(-1px,1px); }
-    80% { transform: translate(1px,-1px); }
-    100% { transform: translate(0,0); }
-  }
+section {
+  min-height: 100vh;             /* prend toute la hauteur de l’écran */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;        /* texte centré verticalement */
+  text-align: center;
+  padding: 50px;
+}
 
-  @keyframes glitchBottom {
-    0% { transform: translate(0,0); }
-    20% { transform: translate(1px,-1px); }
-    40% { transform: translate(-1px,1px); }
-    60% { transform: translate(1px,-1px); }
-    80% { transform: translate(-1px,1px); }
-    100% { transform: translate(0,0); }
-  }
+/* ----------------------------- */
+/*         SECTION HERO          */
+/* ----------------------------- */
 
-  /* Projects Grid */
-  .projects { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; margin-top:50px; }
-  .project { background:rgba(0,255,234,0.05); padding:20px; border:1px solid #00ffea; transition:0.3s; }
-  .project:hover { transform:scale(1.05); box-shadow:0 0 20px #0099ff; border-color:#0099ff; }
+#hero {
+  position: relative;
+  overflow: hidden;               /* coupe les éléments qui dépassent */
+}
 
-  /* Footer */
-  footer { padding:20px; text-align:center; border-top:1px solid #00ffea; margin-top:50px; }
+/* Le canvas 3D est placé en arrière-plan */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;                    /* passe derrière le texte */
+}
 
-  /* About Section */
-  #about p { max-width:600px; line-height:1.6; }
+/* ----------------------------- */
+/*          TITRE GLITCH         */
+/* ----------------------------- */
+
+.holo-title {
+  font-size: 3em;
+  font-weight: bold;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #00ffea;
+  margin-bottom: 20px;
+}
+
+/* Avant et après le titre : servent à créer les "dédoublements" glitch */
+.holo-title::before,
+.holo-title::after {
+  content: attr(data-text);       /* reprend le texte original */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #00ffea;
+  overflow: hidden;
+  opacity: 0.8;
+}
+
+/* Ligne du haut glitchée */
+.holo-title::before {
+  left: 1px;
+  text-shadow: -1px 0 #00ffea;
+  clip-path: inset(0, 900px, 15px, 0);    /* découpe une partie du texte */
+  animation: glitchTop 2s infinite linear;
+}
+
+/* Ligne du bas glitchée */
+.holo-title::after {
+  left: -1px;
+  text-shadow: 1px 0 #00ffea;
+  clip-path: inset(10px, 900px, 25px, 0); /* autre découpe */
+  animation: glitchBottom 2.5s infinite linear;
+}
+
+/* Animation glitch haut */
+@keyframes glitchTop {
+  0% { transform: translate(0,0); }
+  20% { transform: translate(-1px,1px); }
+  40% { transform: translate(1px,-1px); }
+  60% { transform: translate(-1px,1px); }
+  80% { transform: translate(1px,-1px); }
+  100% { transform: translate(0,0); }
+}
+
+/* Animation glitch bas */
+@keyframes glitchBottom {
+  0% { transform: translate(0,0); }
+  20% { transform: translate(1px,-1px); }
+  40% { transform: translate(-1px,1px); }
+  60% { transform: translate(1px,-1px); }
+  80% { transform: translate(-1px,1px); }
+  100% { transform: translate(0,0); }
+}
+
+/* ----------------------------- */
+/*        GRILLE DE PROJETS      */
+/* ----------------------------- */
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  /* s’adapte automatiquement à la largeur de l’écran */
+  gap: 30px;
+  margin-top: 50px;
+}
+
+/* Carte projet */
+.project {
+  background: rgba(0,255,234,0.05); /* bleu transparent */
+  padding: 20px;
+  border: 1px solid #00ffea;
+  transition: 0.3s;
+}
+
+/* Effet "carte néon" au hover */
+.project:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #0099ff;
+  border-color: #0099ff;
+}
+
+/* ----------------------------- */
+/*             FOOTER            */
+/* ----------------------------- */
+
+footer {
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #00ffea;
+  margin-top: 50px;
+}
+
+/* ----------------------------- */
+/*           ABOUT + PRES        */
+/* ----------------------------- */
+
+#about p,
+#Presentation p {
+  max-width: 600px;           /* évite que le texte soit trop large */
+  line-height: 1.6;           /* lecture plus agréable */
+  margin-bottom: 20px;
+}
+
+/* Style du titre "Présentation" */
+.Moi {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #00ffea;
+}
+
 </style>
 </head>
 <body>
@@ -101,31 +220,37 @@
 </nav>
 
 <section id="hero">
-  <h1 class="holo-title" data-text="CYBERPUNK PORTFOLIO">CYBERPUNK PORTFOLIO</h1>
-  <p>Explorateur de blockchain & cryptographie | Hacker éthique</p>
+  <h1 class="holo-title" data-text="MON PORTFOLIO">MON PORTFOLIO</h1>
+  <p>Explorateur de blockchain & passionné de cybersécurité| Futur Hacker éthique | Futur Développeur de jeux vidéos</p>
   <canvas></canvas>
+</section>
+
+<section id="Presentation">
+  <h2 class="Moi">Présentation</h2>
+  <p>Bienvenue sur mon Portefolio voyageurs, je me présente je m'appel David et je suis un jeune de 23 ans pleins d'ambitions et de projets entreprenariaux dans le domaine du numérique .
+    Je suis actuellement en formation de développeur web/mobile afin d'acquérir les compétences nécessaires pour réaliser mes futurs projets personnels et professionnels notamment lié au développement de mon 1er jeu vidéo et aux audits de sécurité en tant que futur pentester.
+  </p>
 </section>
 
 <section id="about">
   <h2>À propos</h2>
-  <p>Je suis un passionné de la cryptographie et de l'univers cypherpunk, créant des solutions décentralisées et sécurisées pour un futur libre et privé.</p>
+  <p>Mon projet personnel et professionnel principal est de devenir auto-entrepreneur et de pouvoir vivre de mes différentes passions dans le numérique </p>
+  <p>Je suis actuellement en formation de développement web/mobile et je souhaiterais utilisais les compétences apprise pour pour travailler en tant que développeur web salarié dans un premier temps </p>
+  <p>Je suis un passionné de cryptographie ,de cybersécurité et des questions liés à l'anonymat, plus tard je souhaiterais devenir pentester à mon compte pour analyser dans un premier temps puis déceler les potentiels failles de sécurité .</p>
+  <p>Je suis également passioné par le développement de jeux vidéos, nottament par la création de jeux vidéos 2D ou 3D indé .</p>
 </section>
 
 <section id="projects">
   <h2>Projets</h2>
   <div class="projects">
     <div class="project">
-      <h3>Projet Blockchain 1</h3>
+      <h3>Projet de Jeu 2D (style RPG)</h3>
       <p>Smart contract pour NFT sécurisé.</p>
       <a href="#">Voir sur GitHub</a>
     </div>
+
     <div class="project">
-      <h3>Projet DeFi 2</h3>
-      <p>Plateforme décentralisée d'échange de tokens.</p>
-      <a href="#">Voir sur GitHub</a>
-    </div>
-    <div class="project">
-      <h3>Projet Sécurité 3</h3>
+      <h3>Projet Sécurité 2</h3>
       <p>Audit et outils de protection cryptographique.</p>
       <a href="#">Voir sur GitHub</a>
     </div>
@@ -134,11 +259,11 @@
 
 <section id="contact">
   <h2>Contact</h2>
-  <p>Envoyez-moi un message : <a href="mailto:cypherpunk@example.com">cypherpunk@example.com</a></p>
+  <p>Envoyez-moi un message : <a href="mailto:deltanumwork@gmail.com">deltanumwork@gmail.com</a></p>
 </section>
 
 <footer>
-  <p>“Privacy is a right, not a privilege.” – Cypherpunk</p>
+  <p>“Privacy is a right, not a privilege.”</p>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
